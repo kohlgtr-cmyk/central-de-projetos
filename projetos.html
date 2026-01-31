@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | Douglas Kohl</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">DK.PROJECTS</div>
+            <a href="https://portifolio-ten-lake-69.vercel.app" class="back-link">
+                ← Voltar ao Portfólio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Todos os <span class="gradient-text">Projetos</span></h1>
+            <p>Explore minha coleção completa de projetos web, experimentos e trabalhos em andamento</p>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalProjects">0</div>
+                <div class="stat-label">Total de Projetos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completedProjects">0</div>
+                <div class="stat-label">Finalizados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="ongoingProjects">0</div>
+                <div class="stat-label">Em Andamento</div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <section class="controls">
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Buscar projetos...">
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="HTML5">HTML5</button>
+                <button class="filter-btn" data-filter="CSS3">CSS3</button>
+                <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+                <button class="filter-btn" data-filter="React">React</button>
+                <button class="filter-btn" data-filter="SCSS">SCSS</button>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid" id="projectsGrid">
+            <!-- Projects will be injected here by JavaScript -->
+        </section>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <h3>Nenhum projeto encontrado</h3>
+            <p>Tente ajustar os filtros ou a busca</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
