@@ -5,7 +5,7 @@
                 description: "Landing Page para a banda EchoDome com design moderno e interativo. Apresenta informações da banda, músicas e eventos.",
                 tech: ["HTML5", "CSS3", "JavaScript", "SCSS"],
                 status: "ongoing",
-                emoji: "🎸",
+                image:"/images/echodome.jpg",
                 demo: "https://echodome.vercel.app",
                 github: "https://github.com/kohlgtr-cmyk/echodome"
             },
@@ -14,7 +14,7 @@
                 description: "Landing Page moderna para barbearia com sistema de agendamento, galeria de cortes e informações de serviços.",
                 tech: ["HTML5", "CSS3", "JavaScript", "SCSS"],
                 status: "completed",
-                emoji: "✂️",
+                image:"/images/barber.png",
                 demo: "https://barber-orcin-gamma.vercel.app",
                 github: "https://github.com/kohlgtr-cmyk/barber"
             },
@@ -22,19 +22,37 @@
                 title: "FD Store",
                 description: "Plataforma de e-commerce completa com carrinho de compras, sistema de filtros, autenticação e integração com API. Design responsivo com foco em UX.",
                 tech: ["HTML5", "JavaScript", "CSS3"],
-                status: "completed",
-                emoji: "🛒",
+                status: "planning",
+                image:"/images/fd.png",
                 demo: "https://fdstore.vercel.app",
                 github: "https://github.com/kohlgtr-cmyk/fdstore"
             },
             {
-                title: "Task Management App",
-                description: "Aplicação de gerenciamento de tarefas com drag-and-drop, categorias personalizadas, filtros e modo escuro. Interface inspirada em ferramentas modernas de produtividade.",
+                title: "Ebook Sem Rumo",
+                description: "Aplicação de Ebook de uma história de fantasia e ficção, com musicas e efeitos sonoros para deixar a experiência mais interativa.",
                 tech: ["React", "JavaScript", "CSS3"],
                 status: "ongoing",
-                emoji: "✅",
-                demo: "#",
-                github: "#"
+                image:"images/ebook.png",
+                demo: "https://ebook-sem-rumo.vercel.app",
+                github: "https://github.com/kohlgtr-cmyk/ebook"
+            },
+            {
+                title: "Nandeva",
+                description: "Página interativa para o trio Nandeva expor imagens e videos das apresentações e também, a guia \"shows\" onde eles conseguem alterar, adicionar e excluir informações das apresentações.",
+                tech: ["React", "JavaScript", "CSS3"],
+                status: "ongoing",
+                image:"images/nandeva.png",
+                demo: "https://nandeva.vercel.app",
+                github: "https://github.com/kohlgtr-cmyk/nandeva"
+            },
+            {
+                title: "AgroPetShop",
+                description: "Uma página para o Agro Pet Shop, com um sistema de produtos e afins, carrinho de compras e guia de favoritos.",
+                tech: ["HTML5", "JavaScript", "CSS3"],
+                status: "work in progress",
+                image:"images/agropet.png",
+                demo: "https://agropetshop.vercel.app",
+                github: "https://github.com/kohlgtr-cmyk/agropetshop"
             }
         ];
 
@@ -48,7 +66,19 @@
             updateStats();
             setupEventListeners();
         }
-
+// Get Status Text
+function getStatusText(status) {
+    const statusMap = {
+        'completed': 'Finalizado',
+        'ongoing': 'Em Andamento',
+        'paused': 'Pausado',
+        'planning': 'Planejando',
+        'archived': 'Arquivado',
+        'beta': 'Beta',
+        'wip': 'WIP'
+    };
+    return statusMap[status] || status;
+}
         // Render Projects
         function renderProjects() {
             const grid = document.getElementById('projectsGrid');
@@ -71,14 +101,17 @@
             
             grid.innerHTML = filteredProjects.map(project => `
                 <div class="project-card" style="animation-delay: ${Math.random() * 0.3}s">
-                    <div class="project-image">
-                        ${project.emoji}
-                    </div>
+                   <div class="project-image">
+    ${project.image 
+        ? `<img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">` 
+        : project.emoji || '📁'}
+</div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">${project.title}</h3>
-                            <span class="project-status ${project.status}">${project.status === 'ongoing' ? 'Em Andamento' : 'Finalizado'}</span>
-                        </div>
+<span class="project-status ${project.status}">
+    ${getStatusText(project.status)}
+</span>                        </div>
                         <p class="project-description">${project.description}</p>
                         <div class="project-tech">
                             ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}

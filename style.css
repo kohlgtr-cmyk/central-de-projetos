@@ -481,3 +481,32 @@
                 font-size: 2.5rem;
             }
         }
+.project-status.completed {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-primary); /* Verde */
+}
+
+.project-status.ongoing {
+    background: rgba(255, 200, 0, 0.1);
+    color: #ffc800; /* Amarelo */
+}
+
+.project-status.paused {
+    background: rgba(156, 163, 175, 0.1);
+    color: #9ca3af; /* Cinza */
+}
+
+.project-status.planning {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6; /* Azul */
+}
+
+.project-status.archived {
+    background: rgba(107, 114, 128, 0.1);
+    color: #6b7280; /* Cinza escuro */
+}
+
+.project-status.beta {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7; /* Roxo */
+}        
